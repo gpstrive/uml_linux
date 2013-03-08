@@ -1,0 +1,1 @@
+cmd_/home/gaopeng/test/sequence_module/sequence.ko := ld -r -m elf_i386 -T /usr/src/linux-headers-2.6.35-32-generic-pae/scripts/module-common.lds --build-id -o /home/gaopeng/test/sequence_module/sequence.ko /home/gaopeng/test/sequence_module/sequence.o /home/gaopeng/test/sequence_module/sequence.mod.o

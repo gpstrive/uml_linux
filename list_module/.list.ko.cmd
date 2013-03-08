@@ -1,0 +1,1 @@
+cmd_/home/gaopeng/test/list_module/list.ko := ld -r -m elf_i386 -T /usr/src/linux-headers-2.6.35-32-generic-pae/scripts/module-common.lds --build-id -o /home/gaopeng/test/list_module/list.ko /home/gaopeng/test/list_module/list.o /home/gaopeng/test/list_module/list.mod.o
