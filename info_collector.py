@@ -32,13 +32,13 @@ class InfoCollector():
         last_record_filelist = {}
         for each in info_list:
            # print each[0]
-            last_record_filelist[each[1]]= '/home/gaopeng/watch/device.info' 
+            last_record_filelist[each[1]]= '/home/gaeng/watch/device.info' 
         file_handler.close()
         return info_list, last_record_filelist
     def init_csv(self,info_list):
         """判断监控的设备对应的csv文件是否已存在，若无，则新建"""
         for each in info_list:
-            csv_name = '/home/gaopeng/watch/devices/%s_info.csv' %(each[0])  
+            csv_name = '/home/gaeng/watch/devices/%s_info.csv' %(each[0])  
             path = os.path.join(sys.path[0],csv_name)
             if not os.path.isfile(path):
                 file_handler = open(path,'w+')
@@ -52,15 +52,15 @@ class InfoCollector():
             (device_type,name,ip,port,username,password) = device_info
             port=int(port)
             print name, ip,port
-            csv_name = '/home/gaopeng/watch/devices/%s_info.csv' %(name)      
+            csv_name = '/home/gaeng/watch/devices/%s_info.csv' %(name)      
             time_str = time.strftime("%Y-%m-%d-%H-%M")
-            dmg_name = '/home/gaopeng/watch/devices/%s_%s.dmg' %(name, time_str)
+            dmg_name = '/home/gaeng/watch/devices/%s_%s.dmg' %(name, time_str)
                 
             #创建ssh client
             ssh_client = paramiko.SSHClient()
             ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
             try:
-                ssh_client.connect(ip, port ,username, password,key_filename='/home/gaopeng/.ssh/nta.dsa',timeout=20)
+                ssh_client.connect(ip, port ,username, password,key_filename='/home/gaeng/.ssh/a.dsa',timeout=20)
                 print "connected!"
             except Exception,e:
                 print "can not connect to %s!" %ip
@@ -69,9 +69,9 @@ class InfoCollector():
                 msg = fp.getvalue()
                 print msg
                 continue
-            if device_type == "6000":
+            if device_type == "000":
                 #获取温度
-                stdin,stdout,sterr = ssh_client.exec_command('cat /proc/tile/environment')
+                stdin,stdout,sterr = ssh_client.exec_command('cat /proc/environment')
                 info = stdout.read().strip().split('\n')
                 chip_temp = info[0].strip()[info[0].index(':')+2:]
                 board_temp = info[1].strip()[info[1].index(':')+2:]
@@ -120,7 +120,7 @@ class InfoCollector():
                     else:
                         print "result is not null"
                         last_record_filelist[name]=dmg_name
-            elif device_type == "ADS-M" or device_type == "NTA":
+            elif device_type == "DS-M" or device_type == "A":
                 stdin,stdout,stderr=ssh_client.exec_command(' top -b -n 1 | grep -E "Cpu|Mem" ')
                 cpu_mem=stdout.read()
                 stdin,stdout,stderr=ssh_client.exec_command(' df ')
@@ -132,7 +132,7 @@ class InfoCollector():
                 print temp
                 file_handler.write(temp)
                 file_handler.close()
-            elif device_type == "4000":
+            elif device_type == "000":
                 stdin,stdout,sterr = ssh_client.exec_command('free|grep Mem')
                 free_mem = stdout.read().strip().split()[3]
                 #获取引擎状态
