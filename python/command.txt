@@ -1,0 +1,2 @@
+sys
+ip route-static 20.20.20.20 32 NULL  0
