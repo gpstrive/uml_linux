@@ -1,0 +1,1 @@
+cmd_/home/gaopeng/uml_linux/uio1/simple.ko := ld -r -m elf_i386 -T /usr/src/linux-headers-2.6.35-32-generic-pae/scripts/module-common.lds --build-id -o /home/gaopeng/uml_linux/uio1/simple.ko /home/gaopeng/uml_linux/uio1/simple.o /home/gaopeng/uml_linux/uio1/simple.mod.o

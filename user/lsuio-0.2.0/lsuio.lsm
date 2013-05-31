@@ -1,0 +1,21 @@
+Begin3
+Title:		lsuio
+Version:	0.2.0
+Entered-date:	2013-05-27
+Description:	List UIO devices.
+		lsuio.lsm.  Generated from lsuio.lsm.in by configure.
+		Please edit lsuio.lsm.in to fix the Keywords and
+		Primary-site entries, add several more lines of
+		description here if appropriate, and to delete these
+		instructions.
+Keywords:	[substitute your keywords here]
+Author: 	hjk@linutronix.de (Hans J. Koch)
+Maintained-by:	hjk@linutronix.de (Hans J. Koch)
+Primary-site:	metlab.unc.edu pub/Linux/apps/some/directory
+		31k lsuio-0.2.0.tar.gz
+		500  lsuio.lsm
+Alternate-site: 
+Original-site:  
+Platforms:      
+Copying-policy:	GNU copyleft
+End

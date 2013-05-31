@@ -1,0 +1,48 @@
+AutoGen Definitions options;
+
+prog_name     = cif;
+prog_title    = "new API for Hilscher CIF cards";
+/*
+detail        = "This string is added to the usage output when the HELP
+option is selected. The contents of the file `cif.details' is added
+to the usage output when the MORE-HELP option is selected.";
+detail_file   = cif.details; 
+explain       = "additional information given whenever the usage routine is invoked.";
+homerc        = $HOME;
+homerc        = ".";
+*/
+owner         = "Benedikt Spranger";
+copyright     = 2006;
+/*
+Instead of the following, you can use one of these:
+copyright_lgpl;
+copyright_note="All rights reserved.";
+*/
+copyright_gpl;
+/*
+environrc;
+exerc;
+*/
+/* get the version number from configure.in */
+version       = `
+awk '/^ *AM_INIT_AUTOMAKE/{
+  sub(/.*AM_INIT_AUTOMAKE.*, */,"");sub(/\\).*$/,"");
+  print
+}' configure.in`;
+long_opts;
+
+flag = {
+    name      = quiet;
+    value     = q;
+    descrip   = "inhibit usual output";
+};
+flag = {
+    name      = silent;
+    value     = q;
+    descrip   = "inhibit usual output";
+};
+flag = {
+    name      = verbose;
+    value     = V;
+    descrip   = "print more information";
+};

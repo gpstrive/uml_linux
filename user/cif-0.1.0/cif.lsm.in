@@ -1,0 +1,21 @@
+Begin3
+Title:		cif
+Version:	@VERSION@
+Entered-date:	@ISODATE@
+Description:	new API for Hilscher CIF cards
+		@configure_input@
+		Please edit cif.lsm.in to fix the Keywords and
+		Primary-site entries, add several more lines of
+		description here if appropriate, and to delete these
+		instructions.
+Keywords:	[substitute your keywords here]
+Author: 	b.spranger@linutronix.de (Benedikt Spranger)
+Maintained-by:	b.spranger@linutronix.de (Benedikt Spranger)
+Primary-site:	metlab.unc.edu pub/Linux/apps/some/directory
+		31k cif-@VERSION@.tar.gz
+		500  cif.lsm
+Alternate-site: 
+Original-site:  
+Platforms:      
+Copying-policy:	GNU copyleft
+End
