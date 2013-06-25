@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd ~/.ddos-tools/torshammer
+exec gnome-terminal -x sh -c './torshammer.py; exec bash'

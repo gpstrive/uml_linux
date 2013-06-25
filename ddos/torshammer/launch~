@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd ~/.ddos-tools/torshammer
+
+xterm -hold -e "./torshammer.py" &
+exec gnome-terminal -x sh -c './torshammer.py; exec bash'
+#--geometry=40x40
